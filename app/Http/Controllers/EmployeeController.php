@@ -4,7 +4,10 @@ namespace App\Http\Controllers;
 
 use App\Models\Employee;
 use Illuminate\Http\Request;
+use App\Services\EmployeeService;
 use Illuminate\Support\Facades\View;
+use App\Http\Requests\StoreEmployeeRequest;
+
 
 class EmployeeController extends Controller
 {
@@ -37,9 +40,10 @@ class EmployeeController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreEmployeeRequest $request, EmployeeService $employeeService)
     {
-        //
+        $employee = $employeeService->createEmployee($request);
+        return redirect()->route('employees.index');
     }
 
     /**
@@ -48,9 +52,9 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Employee $employee)
     {
-        //
+        return view('employees.show')->with('employee', $employee);
     }
 
     /**
@@ -59,9 +63,9 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Employee $employee)
     {
-        //
+        return view('employees.edit')->with('employee', $employee);
     }
 
     /**
@@ -71,9 +75,16 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Employee $employee)
     {
-        //
+        $employee->first_name = $request->first_name;
+        $employee->last_name = $request->last_name;
+        $employee->email = $request->email;
+        $employee->phone = $request->phone;
+
+        $employee->save();
+        
+        return redirect()->route('employees.index');
     }
 
     /**
@@ -82,8 +93,9 @@ class EmployeeController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function destroy(Employee $employee)
     {
-        //
+        $employee->delete();
+        return redirect()->route('employees.index');
     }
 }

@@ -11,7 +11,6 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <p>Employee Details</p>
                 </div>
-                {{-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">Companies List</div> --}}
                 <div class="p-6 text-gray-700">
                     
                     <div class="p-2 border">
