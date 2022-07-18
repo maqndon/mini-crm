@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CompanyController;
+use App\Http\Controllers\EmployeeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,10 +17,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('welcome');
-});
-
-Route::get('/dashboard', function () {
-    return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::group(['middleware'=>'auth'], function() {
+
+    Route::resources([
+        'companies' => CompanyController::class,
+        'employees' => EmployeeController::class,
+    ]);  
+
+});
 
 require __DIR__.'/auth.php';
