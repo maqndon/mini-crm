@@ -15,11 +15,11 @@ use App\Http\Controllers\EmployeeController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->middleware(['auth'])->name('dashboard');
-
 Route::group(['middleware'=>'auth'], function() {
+
+    Route::get('/', function () {
+        return redirect('companies');
+    });
 
     Route::resources([
         'companies' => CompanyController::class,
