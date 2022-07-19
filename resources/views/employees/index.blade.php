@@ -14,7 +14,7 @@
                         {{ __('Create new employee') }}
                     </x-button>
                     </form>
-                    {{-- If the company was store will appear this message --}}
+                    {{-- If the employee was store/updated will appear this message --}}
                     @if (session('status'))
                     <div class="text-green-600">
                         {{ session('status') }}
