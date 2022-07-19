@@ -15,7 +15,7 @@
                     </x-button>
                     </form>
                     
-                    {{-- If the company was store will appear this message --}}
+                    {{-- If the company was store/updated will appear this message --}}
                     @if (session('status'))
                         <div class="text-green-600">
                             {{ session('status') }}

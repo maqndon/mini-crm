@@ -37,9 +37,9 @@
                             <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="$employee->email" />
                         </div>
                         <div class="mt-4">
-                            <x-label for="website" :value="__('Phone')" />
+                            <x-label for="phone" :value="__('Phone')" />
 
-                            <x-input id="website" class="block mt-1 w-full" type="text" name="phone" :value="$employee->phone" />
+                            <x-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="$employee->phone" />
                         </div>
 
                         <div class="flex items-center justify-end mt-4">
