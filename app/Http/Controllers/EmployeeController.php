@@ -43,7 +43,7 @@ class EmployeeController extends Controller
     public function store(StoreEmployeeRequest $request, EmployeeService $employeeService)
     {
         $employee = $employeeService->createEmployee($request);
-        return redirect()->route('employees.index');
+        return redirect()->route('employees.index')->with('status', 'The employee was successfully stored');
     }
 
     /**
@@ -84,7 +84,7 @@ class EmployeeController extends Controller
 
         $employee->save();
         
-        return redirect()->route('employees.index');
+        return redirect()->route('employees.index')->with('status', 'The employee was successfully updated');
     }
 
     /**

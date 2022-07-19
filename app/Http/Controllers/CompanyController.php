@@ -41,7 +41,7 @@ class CompanyController extends Controller
     public function store(StoreCompanyRequest $request, CompanyService $companyService)
     {
         $company = $companyService->createCompany($request);
-        return redirect()->route('companies.index');
+        return redirect()->route('companies.index')->with('status', 'The company was successfully stored');
     }
 
     /**
@@ -85,7 +85,7 @@ class CompanyController extends Controller
         }
         $company->save();
         
-        return redirect()->route('companies.index');
+        return redirect()->route('companies.index')->with('status', 'The company was successfully updated');
 
     }
 

@@ -14,6 +14,12 @@
                         {{ __('Create new employee') }}
                     </x-button>
                     </form>
+                    {{-- If the company was store will appear this message --}}
+                    @if (session('status'))
+                    <div class="text-green-600">
+                        {{ session('status') }}
+                    </div>
+                    @endif
                 </div>
                 
                 <table class="p-2 w-full">
