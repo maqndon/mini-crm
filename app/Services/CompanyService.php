@@ -12,7 +12,7 @@ class CompanyService
     public function createCompany(Request $request): Company
     {
 
-        $imageDir = 'images';
+        $imageDir = 'public/images';
 
         $company = Company::create([
             'name' => $request->name, 

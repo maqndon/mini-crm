@@ -15,7 +15,7 @@
                 <div class="p-6 text-gray-700">
                     
                     <div class="p-2">
-                        <img src="{{ URL($company->logo) }}" alt="">
+                        <img src= "{{ str_replace('public/', '' , URL($company->logo)) }}" alt="{{ $company->name }} - Logo">
                     </div>
 
                     <div class="p-2 border">
@@ -27,7 +27,7 @@
                     </div>
                     
                     <div class="p-2 border">
-                        <p class="inline-block">Website: </p>    {{ $company->website }}
+                        <p class="inline-block">Website: </p> {{ $company->website }}
                     </div>
                     
                     <form action="">
