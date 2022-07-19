@@ -49,16 +49,16 @@ This project was built with Laravel 9.17.0, PHP 8.1.1 and mysql Ver 15.1 Distrib
 ![Company List](public/screenshots/login.png)
 
 #### Company List
-![Company Detail](public/screenshots/company-detail.png)
+![Company Detail](public/screenshots/company-list.png)
 
 #### Employee List
 ![Employee List](public/screenshots/employee-list.png)
 
 #### Company Detail
-![Company Detail](public/screenshots/company-detail.png)
+![Company Detail](public/screenshots/company-details.png)
 
 #### Employee Detail
-![Company Detail](public/screenshots/employee-detail.png)
+![Company Detail](public/screenshots/employee-details.png)
 
 
 ## License
