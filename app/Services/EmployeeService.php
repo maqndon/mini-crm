@@ -9,15 +9,17 @@ use Illuminate\Http\Request;
 class EmployeeService
 {
 
-    public function createCompany(Request $request): Employee
+    public function createEmployee(Request $request): Employee
     {
 
-        $company = Employee::create([
+        $employee = Employee::create([
             'first_name' => $request->first_name, 
             'last_name' => $request->last_name, 
             'email' => $request->email, 
-            'phone' => $request->phone
+            'phone' => $request->phone,
+            'company_id' => $request->company_id,
         ]);
+
         return $employee;
     }
 }

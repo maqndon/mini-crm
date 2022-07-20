@@ -3,6 +3,12 @@
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
             {{ __('Create new employee') }}
         </h2>
+        <script>
+            // In your Javascript (external .js resource or <script> tag)
+            $(document).ready(function() {
+                $('#company').select2();
+            });
+        </script>
     </x-slot>
 
     <div class="py-12">
@@ -33,10 +39,21 @@
 
                             <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" />
                         </div>
+                        {{-- phone number --}}
                         <div class="mt-4">
                             <x-label for="phone" :value="__('Phone')" />
 
                             <x-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" />
+                        </div>
+                        {{-- company name --}}
+                        <div class="mt-4">
+                            <x-label for="company_id" :value="__('Company')" />
+                            <select class="mt-4 mx-auto" name="company_id" id="company_id">
+                                <option value="" selected disabled hidden>"Please Select a Company..."</option>
+                                @foreach ($companies as $company)
+                                    <option value="{{ $company->id }}">{{ $company->name }}</option>
+                                @endforeach
+                            </select>
                         </div>
                         <div class="flex items-center justify-end mt-4">
                             <x-button class="ml-4">
