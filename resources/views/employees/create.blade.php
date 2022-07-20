@@ -6,7 +6,7 @@
         <script>
             // In your Javascript (external .js resource or <script> tag)
             $(document).ready(function() {
-                $('#company').select2();
+                $('#company_id').select2();
             });
         </script>
     </x-slot>
