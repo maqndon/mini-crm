@@ -4,7 +4,7 @@
             {{ __('Create new employee') }}
         </h2>
         <script>
-            // In your Javascript (external .js resource or <script> tag)
+            //dropdown with Select2
             $(document).ready(function() {
                 $('#company_id').select2();
             });
@@ -49,10 +49,11 @@
                         <div class="mt-4">
                             <x-label for="company_id" :value="__('Company')" />
                             <select class="mt-4 mx-auto" name="company_id" id="company_id">
-                                <option value="" selected disabled hidden>"Please Select a Company..."</option>
+                                
                                 @foreach ($companies as $company)
                                     <option value="{{ $company->id }}">{{ $company->name }}</option>
                                 @endforeach
+                                <option value="" selected disabled hidden>"Please Select a Company..."</option>
                             </select>
                         </div>
                         <div class="flex items-center justify-end mt-4">
