@@ -48,7 +48,7 @@
                         {{-- company name --}}
                         <div class="mt-4">
                             <x-label for="company_id" :value="__('Company')" />
-                            <select class="mt-4 mx-auto" name="company_id" id="company_id">
+                            <select class="mt-1 block w-full py-2" name="company_id" id="company_id">
                                 
                                 @foreach ($companies as $company)
                                     <option value="{{ $company->id }}">{{ $company->name }}</option>
