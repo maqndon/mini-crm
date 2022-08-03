@@ -46,7 +46,7 @@
                             <form method="POST" onclick="return confirm('Are you sure?')" action="{{ route('employees.destroy', $employee) }}">
                                 @csrf
                                 @method('DELETE')
-                                <x-button class="">
+                                <x-button>
                                     {{ __('Delete') }}
                                 </x-button>
                             </form>

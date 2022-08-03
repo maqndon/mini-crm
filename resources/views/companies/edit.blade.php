@@ -13,12 +13,12 @@
                     {{ 'Edit Company' }}
                 </div>
                 
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 p-2">
                     {{-- class mt-4 --}}
                     <form method="POST" action="{{ route('companies.update', $company) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
-                        <div>
+                        <div class="mt-4">
                             {{-- name --}}
                             <x-label for="name" :value="__('Name')" />
                             <x-input id="name" class="block mt-1 w-full" type="text" name="name" :value="$company->name" required autofocus />
@@ -27,24 +27,23 @@
                             <!-- Email Address -->
                         <div class="mt-4">
                             <x-label for="email" :value="__('Email')" />
-
                             <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="$company->email" />
                         </div>
+                            <!-- Web Site -->
                         <div class="mt-4">
                             <x-label for="website" :value="__('Website')" />
-
                             <x-input id="website" class="block mt-1 w-full" type="text" name="website" :value="$company->website" />
                         </div>
 
                         @if (!$company->logo)
                             <div class="mt-4">
                                 <x-label for="logo" :value="__('Logo')" />
-
                                 <x-input id="logo" class="block mt-1 w-full" type="file" name="logo" :value="old('$company->logo')" />
                             </div>
                         @endif
+
                         <div class="flex items-center justify-end mt-4">
-                            <x-button class="ml-4">
+                            <x-button>
                                 {{ __('Edit Company') }}
                             </x-button>
                         </div>

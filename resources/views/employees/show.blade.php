@@ -29,11 +29,13 @@
                         <p class="inline-block">Phone: </p> {{ $employee->phone }}
                     </div>
                     
-                    <form action="">
-                        <x-button class="ml-4">
-                            <a href={{ route('employees.edit', $employee->id) }}>{{ __('Edit') }}</a>
-                        </x-button>
-                    </form>
+                    <div class="flex items-center justify-end mt-4">
+                        <form>
+                            <x-button>
+                                <a href={{ route('employees.edit', $employee->id) }}>{{ __('Edit') }}</a>
+                            </x-button>
+                        </form>
+                    </div>
 
                 </div>
 

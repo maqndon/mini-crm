@@ -14,7 +14,7 @@
                 {{-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">Companies List</div> --}}
                 <div class="p-6 text-gray-700">
                     
-                    <div class="p-2">
+                    <div class="mt-4">
                         <img src= "{{ str_replace('public/', '' , URL($company->logo)) }}" alt="{{ $company->name }} - Logo">
                     </div>
 
@@ -30,11 +30,13 @@
                         <p class="inline-block">Website: </p> {{ $company->website }}
                     </div>
                     
-                    <form action="">
-                        <x-button class="ml-4">
-                            <a href={{ route('companies.edit', $company->id) }}>{{ __('Edit') }}</a>
-                        </x-button>
-                    </form>
+                    <div class="flex items-center justify-end mt-4"">
+                        <form>
+                            <x-button>
+                                <a href={{ route('companies.edit', $company->id) }}>{{ __('Edit') }}</a>
+                            </x-button>
+                        </form>
+                    </div>
 
                 </div>
 

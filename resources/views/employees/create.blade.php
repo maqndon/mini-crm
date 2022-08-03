@@ -18,7 +18,7 @@
 
                 </div>
                 
-                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 p-2">
                     <form method="POST" action="{{ route('employees.store') }}">
                         @csrf
                         <div class="mt-4">
@@ -36,13 +36,11 @@
                             <!-- Email Address -->
                         <div class="mt-4">
                             <x-label for="email" :value="__('Email')" />
-
                             <x-input id="email" class="block mt-1 w-full" type="email" name="email" :value="old('email')" />
                         </div>
                         {{-- phone number --}}
                         <div class="mt-4">
                             <x-label for="phone" :value="__('Phone')" />
-
                             <x-input id="phone" class="block mt-1 w-full" type="text" name="phone" :value="old('phone')" />
                         </div>
                         {{-- company name --}}
