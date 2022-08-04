@@ -15,4 +15,15 @@ class Company extends Model
         'website',
         'logo',
     ];
+
+    /**
+     * Get all of the employees for the Employee
+     *
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function employees(): HasMany
+    {
+        return $this->hasMany(Employee::class);
+    }
+
 }

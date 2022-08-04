@@ -27,13 +27,4 @@ class Employee extends Model
         return $this->belongsTo(Company::class);
     }
 
-    /**
-     * Get all of the employees for the Employee
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\HasMany
-     */
-    public function employees(): HasMany
-    {
-        return $this->hasMany(Employee::class);
-    }
 }
