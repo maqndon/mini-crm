@@ -2,8 +2,9 @@
 
 namespace Tests\Feature;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
+use App\Models\User;
+use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class ExampleTest extends TestCase
 {
@@ -14,8 +15,10 @@ class ExampleTest extends TestCase
      */
     public function test_the_application_returns_a_successful_response()
     {
-        $response = $this->get('/');
-
+        $this->withoutExceptionHandling();
+        $user = $this->loginAsAdmin();
+        $this->actingAs($user);
+        $response = $this->get('/companies');
         $response->assertStatus(200);
     }
 }
