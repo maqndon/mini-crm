@@ -24,39 +24,59 @@
 
                 </div>
                 
-                
-                <table class="p-2 w-full">
-                    <tr class="text-gray-600 bg-gray-100">
+                @if (count($companies) > 0)
+
+                  <table class="p-2 w-full">
+                    
+                    @if (count($companies) > 1)
+                      <tr class="text-gray-600 bg-gray-100">
+                        {{-- <th>Logo</th> --}}
+                        <th>Names</th>
+                        <th class="border-r border-l">Emails</th>
+                        <th>Websites</th>
+                      </tr>
+                    @else
+                      <tr class="text-gray-600 bg-gray-100">
                         {{-- <th>Logo</th> --}}
                         <th>Name</th>
                         <th class="border-r border-l">Email</th>
                         <th>Website</th>
-                    </tr>
-                @foreach ( $companies as $company)
-                    <tr>
-                        {{-- <td>Logo</th> --}}
-                        <td class="px-2 border-l border-b border-t"><a href="{{ route('companies.show', $company) }}">{{ $company->name }}</a></td>
-                        <td class="px-2 border-l border-b border-t">{{ $company->email }}</td>
-                        <td class="px-2 border-l border-b border-t">{{ $company->website }}</td>
-                        <td class="border-l border-b border-t">
-                            <x-button class="">
-                                <a href={{ route('companies.edit', $company) }}>{{ __('Edit') }}</a>
-                            </x-button>
-                        </td>
-                        <td class="border-b border-t">
-                            <form method="POST" onclick="return confirm('Are you sure?')" action="{{ route('companies.destroy', $company) }}">
-                                @csrf
-                                @method('DELETE')
+                      </tr> 
+                    @endif
+
+                    @foreach ( $companies as $company)
+                        <tr>
+                            {{-- <td>Logo</th> --}}
+                            <td class="px-2 border-l border-b border-t"><a href="{{ route('companies.show', $company) }}">{{ $company->name }}</a></td>
+                            <td class="px-2 border-l border-b border-t">{{ $company->email }}</td>
+                            <td class="px-2 border-l border-b border-t">{{ $company->website }}</td>
+                            <td class="border-l border-b border-t">
                                 <x-button class="">
-                                    {{ __('Delete') }}
+                                    <a href={{ route('companies.edit', $company) }}>{{ __('Edit') }}</a>
                                 </x-button>
-                            </form>
-                        </td>
-                    </tr>
-                @endforeach
-                </table>
-                {{-- pagination --}}
-                <div class="pl-3">{{ $companies->links() }}</div>
+                            </td>
+                            <td class="border-b border-t">
+                                <form method="POST" onclick="return confirm('Are you sure?')" action="{{ route('companies.destroy', $company) }}">
+                                    @csrf
+                                    @method('DELETE')
+                                    <x-button class="">
+                                        {{ __('Delete') }}
+                                    </x-button>
+                                </form>
+                            </td>
+                        </tr>
+                    @endforeach
+                  </table>
+                  {{-- pagination --}}
+                  <div class="pl-3">{{ $companies->links() }}</div>
+                
+                @else
+
+                  <div class="alert alert-danger">
+                    {{ __('No results!') }}
+                  </div>
+
+                @endif
             </div>
         </div>
     </div>
