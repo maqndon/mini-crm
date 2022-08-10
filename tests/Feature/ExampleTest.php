@@ -13,12 +13,22 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
+
+    public function setUp(): void
+    {
+        parent::setUp();
+
+        $this->user = User::factory()->create();
+    }
+
     public function test_the_application_returns_a_successful_response()
     {
         $this->withoutExceptionHandling();
-        $user = $this->loginAsAdmin();
-        $this->actingAs($user);
+
+        $this->actingAs($this->user);
+
         $response = $this->get('/companies');
+        
         $response->assertStatus(200);
     }
 }
