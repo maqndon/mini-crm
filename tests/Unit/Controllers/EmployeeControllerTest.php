@@ -68,7 +68,7 @@ class EmployeeControllerTest extends TestCase
        $response->assertRedirect();
     }
 
-    public function test_a_company_can_be_stored()
+    public function test_a_employee_can_be_stored()
     {
        $this->withoutExceptionHandling();
 
