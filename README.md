@@ -46,20 +46,23 @@ This project was built with Laravel 9.17.0, PHP 8.1.1 and mysql Ver 15.1 Distrib
 
 ## Screenshots
 
-#### Company List
+#### Login
 ![Company List](public/screenshots/login.png)
 
 #### Company List
-![Company Detail](public/screenshots/company-list.png)
+![Company List](public/screenshots/company-list.png)
 
 #### Employee List
 ![Employee List](public/screenshots/employee-list.png)
 
-#### Company Detail
-![Company Detail](public/screenshots/company-details.png)
+#### Company Details
+![Company Details](public/screenshots/company-details.png)
 
-#### Employee Detail
-![Company Detail](public/screenshots/employee-details.png)
+#### Employee Details
+![Employee Details](public/screenshots/employee-details.png)
+
+#### PHPUnit Tests
+![Company Detail](public/screenshots/Tests.png)
 
 
 ## License
