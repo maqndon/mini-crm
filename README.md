@@ -20,6 +20,7 @@ This project was built with Laravel 9.17.0, PHP 8.1.1 and mysql Ver 15.1 Distrib
 * [x] Use Laravel's validation function, using Request classes
 * [x] Use Laravel's pagination for showing Companies/Employees list, 10 entries per page
 * [x] I have used [Breeze](https://laravel.com/docs/9.x/starter-kits#laravel-breeze).
+* [x] PHPUnit Tests
 
 ### Some Modifications I have made
 
