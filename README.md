@@ -20,12 +20,12 @@ This project was built with Laravel 9.17.0, PHP 8.1.1 and mysql Ver 15.1 Distrib
 * [x] Use Laravel's validation function, using Request classes
 * [x] Use Laravel's pagination for showing Companies/Employees list, 10 entries per page
 * [x] I have used [Breeze](https://laravel.com/docs/9.x/starter-kits#laravel-breeze).
-* [x] PHPUnit Tests with a Trait to keep the Code DRY.
+* [x] PHPUnit Tests with a Trait to keep the Code [DRY](https://en.wikipedia.org/wiki/Don%27t_repeat_yourself).
 
 ### Some Modifications I have made
 
-* [x] To apply the Single responsibility principle (SPR) of SOLID, I have used Requests for the rules and Services classes for the Logic.
-* [x] In the Routes I have implemented Route:groups and Route::resorces.
+* [x] To apply the [Single responsibility principle (SPR) of SOLID](https://en.wikipedia.org/wiki/SOLID), I have used Requests for the rules and Services classes for the Logic.
+* [x] In the Routes I have implemented Route:groups and Route::resources.
 * [x] I have implemented Route Model Binding, less code.
 
 ## How to Install
