@@ -3,10 +3,8 @@
 namespace Tests\Unit\Controllers;
 
 use Tests\TestCase;
-use App\Models\User;
-use App\Models\Company;
-use Tests\CreatesApplication;
 use Illuminate\Http\UploadedFile;
+use Tests\Traits\CreateFactories;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
 class CompanyControllerlTest extends TestCase
@@ -17,7 +15,7 @@ class CompanyControllerlTest extends TestCase
      * @return void
      */
 
-    use RefreshDatabase, CreatesApplication;
+    use CreateFactories;
 
     // public $user;
 
@@ -25,9 +23,8 @@ class CompanyControllerlTest extends TestCase
     {
         parent::setUp();
 
-        $this->user = User::factory()->create();
+        $this->CreateFactories();
 
-        $this->company = Company::factory()->create();
     }
 
     public function test_route_companies_index_can_be_rendered(): void

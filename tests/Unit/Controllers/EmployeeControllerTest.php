@@ -3,9 +3,7 @@
 namespace Tests\Unit\Controllers;
 
 use Tests\TestCase;
-use App\Models\User;
-use App\Models\Company;
-use App\Models\Employee;
+use Tests\Traits\CreateFactories;
 
 class EmployeeControllerTest extends TestCase
 {
@@ -14,16 +12,15 @@ class EmployeeControllerTest extends TestCase
      *
      * @return void
      */
+
+    use CreateFactories;
     
     public function setUp(): void
     {
         parent::setUp();
 
-        $this->user = User::factory()->create();
+        $this->CreateFactories();
 
-        $this->company = Company::factory()->create();
-
-        $this->employee = Employee::factory()->create(['company_id' => $this->company->id]);
     }
 
     public function test_route_employees_index_can_be_rendered(): void
