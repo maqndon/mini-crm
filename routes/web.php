@@ -17,9 +17,7 @@ use App\Http\Controllers\EmployeeController;
 
 Route::group(['middleware'=>'auth'], function() {
 
-    Route::get('/', function () {
-        return redirect('companies');
-    });
+    Route::get('/', fn () => redirect('companies'));
 
     Route::resources([
         'companies' => CompanyController::class,
